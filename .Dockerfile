@@ -10,6 +10,4 @@ COPY . .
 
 EXPOSE 4000
 
-VOLUME [ "/app/feedback" ]
-
 CMD ["node", "server.js"]
