@@ -1,11 +1,16 @@
-FROM node 
+FROM node
 
 WORKDIR /app
 
-COPY . /app
+COPY package.json .
 
 RUN npm install
 
-EXPOSE 4000
+COPY . .
 
-CMD ["node", "server.js"]
+EXPOSE 80
+
+ENV MONGODB_USERNAME=root
+ENV MONGODB_PASSWORD=secret
+
+CMD ["npm", "start"]
