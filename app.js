@@ -10,12 +10,7 @@ const Goal = require('./models/goal');
 
 const app = express();
 
-const accessLogStream = fs.createWriteStream(
-  path.join(__dirname, 'logs', 'access.log'),
-  { flags: 'a' }
-);
 
-app.use(morgan('combined', { stream: accessLogStream }));
 
 app.use(bodyParser.json());
 
