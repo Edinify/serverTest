@@ -88,7 +88,7 @@ async function connectToDatabase() {
       }
     );
     console.log('CONNECTED TO MONGODB!!');
-    app.listen(80);
+    app.listen(4000);
   } catch (err) {
     console.error('FAILED TO CONNECT TO MONGODB');
     console.error(err);
