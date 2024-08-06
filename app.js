@@ -6,10 +6,12 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 const Goal = require('./models/goal');
-
+const cors = require('cors');
 const app = express();
 
-
+app.use(cors({
+  origin: 'http://frontend:3000', // Or wherever your frontend is hosted
+}));
 
 app.use(bodyParser.json());
 
@@ -19,6 +21,8 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   next();
 });
+
+
 
 app.get('api/goals', async (req, res) => {
   console.log('TRYING TO FETCH GOALS');
