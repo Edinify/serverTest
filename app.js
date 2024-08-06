@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 
 
 
-app.get('api/goals', async (req, res) => {
+app.get('/api/goals', async (req, res) => {
   console.log('TRYING TO FETCH GOALS');
   try {
     const goals = await Goal.find();
@@ -42,7 +42,7 @@ app.get('api/goals', async (req, res) => {
   }
 });
 
-app.post('api/goals', async (req, res) => {
+app.post('/api/goals', async (req, res) => {
   console.log('TRYING TO STORE GOAL');
   const goalText = req.body.text;
 
@@ -68,7 +68,7 @@ app.post('api/goals', async (req, res) => {
   }
 });
 
-app.delete('api/goals/:id', async (req, res) => {
+app.delete('/api/goals/:id', async (req, res) => {
   console.log('TRYING TO DELETE GOAL');
   try {
     await Goal.deleteOne({ _id: req.params.id });
