@@ -10,7 +10,7 @@ const cors = require('cors');
 const app = express();
 
 app.use(cors({
-  origin: 'http://frontend:3000', // Or wherever your frontend is hosted
+  origin: '*', // Or wherever your frontend is hosted
 }));
 
 app.use(bodyParser.json());
